@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
     const { firstName, lastName, email, company, phone, productInterest, quantity, message } = body
 
     // Create transporter using Gmail SMTP
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: "smtp.zoho.com",
       port: 465,
       auth: {
