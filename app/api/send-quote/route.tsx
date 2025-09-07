@@ -8,17 +8,18 @@ export async function POST(request: NextRequest) {
 
     // Create transporter using Gmail SMTP
     const transporter = nodemailer.createTransporter({
-      service: "gmail",
+      service: "smtp.zoho.com",
+      port: 465,
       auth: {
-        user: "archillesakino@gmail.com",
-        pass: process.env.GMAIL_APP_PASSWORD, // You'll need to set this environment variable
+        user: "hello@thearomapod.com",
+        pass: process.env.HELLO_ZOHO_PASSWORD, // You'll need to set this environment variable
       },
     })
 
     // Email content
     const mailOptions = {
-      from: "archillesakino@gmail.com",
-      to: "archillesakino@gmail.com", // Send to yourself
+      from: "hello@thearomapod.com",
+      to: "hello@thearomapod.com", // Send to yourself
       subject: `New Quote Request from ${firstName} ${lastName}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
